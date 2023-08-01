@@ -21,6 +21,7 @@
       font-family: 'Open Sans', sans-serif;
       justify-content: flex-start;
       cursor: pointer; 
+      width: 100px;
     }
 
     .audio-container img {
@@ -29,6 +30,7 @@
       border-radius: 50%;
       object-fit: cover;
       padding-right: 8px;
+      padding-left: 10px;
     }
 
     .audio-container .microphone-icon {
@@ -59,6 +61,7 @@
       color: #4a5464;
       color: var(--plyr-audio-control-color,#4a5464);
       margin-left: 0px;
+      padding: 0px;
     }
 
     .plyr--audio .plyr__control--overlaid .plyr__control__icon {
@@ -114,7 +117,7 @@
 <body>
   <div class="audio-container" id="audioContainer">
     <!-- Cole o link do Seu áudio Abaixo-->
-    <audio class="plyr" src="https://s3.fr-par.scw.cloud/typebot/public/typebots/qb1lr8axdhf5kr9djph3uckn/blocks/m435v6oefxku0cm0oyzcg2mb?v=1690595983151" autoplay></audio>
+    <audio class="plyr" src="https://s3.fr-par.scw.cloud/typebot/public/typebots/qb1lr8axdhf5kr9djph3uckn/blocks/m435v6oefxku0cm0oyzcg2mb?v=1690595983151"></audio>
     <!-- Cole o link da Sua imagem Abaixo-->
     <img src="https://i.postimg.cc/1XFV4Kxh/Chef-Mauro-Lopes-Especialista-em-Churrasco.png" alt="Imagem">
     <div class="microphone-icon">
@@ -134,13 +137,13 @@
       const durationElement = document.querySelector('.plyr__time--duration');
       const microphoneIcon = document.querySelector('.microphone-icon');
 
-      currentTimeElement.classList.add('hide'); 
+      currentTimeElement.classList.add('hide'); // Adiciona a classe 'hide' ao iniciar
 
       audioElement.addEventListener('play', function() {
         currentTimeElement.classList.remove('hide');
         durationElement.classList.add('hide');
-        microphoneIcon.classList.add('blue'); 
-        audioElement.classList.add('blue'); 
+        microphoneIcon.classList.add('blue'); // Adiciona a classe 'blue' para alterar a cor do ícone
+        audioElement.classList.add('blue'); // Adiciona a classe 'blue' para alterar o background do controle deslizante
         audioElement.style.setProperty('--range-thumb-background', '#3db8ee');
       });
 
